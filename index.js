@@ -7,14 +7,15 @@ let identifyArray = [
 ]
 
 function GetVal(param) {
-
+    let b = document.getElementById('val').innerText
+    console.log(b)
     for (let i = 0; i < identifyArray.length; i++) {
 
         let a = parseInt(document.getElementById(identifyArray[i]).innerText)
         if (param == identifyArray[i]) {
-            console.log(a)
-            let values = a
-            console.log(document.getElementById('val').innerHTML = a)
+
+            (document.getElementById('val').innerHTML = b.concat(a))
+
         }
 
     }
