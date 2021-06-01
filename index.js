@@ -44,7 +44,7 @@ function GetVal(param) {
                 a = '+';
             }
             if (param == 'n-') {
-                a = '-'
+                a = ' - '
             }
             (document.getElementById('val').innerHTML = b.concat(a))
         }

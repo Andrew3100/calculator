@@ -1,91 +1,57 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html>
 <head>
-    <!-- Обязательные метатеги -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-    <script src="index.js"></script>
+   <title>Калькулятор</title>
+   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <!--Здеь хранится сам макет-->
-            <div class="card" style="margin-top: 120px; width: 600px;">
-                <div class="card-body bg-info">
+   <div class="container">
+      <div class="item input">0</div>
 
-                    <div class="container-fluid">
-                        <div class="row ">
-                            <div class="col">
-                                <h4 id="val" style="color: green"></h4>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row bg-dark">
-                            <div class="col text-right">
-                                <p class="text-white" style="margin-top: 10px;">Выводимый результат</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col text-center"><span onclick="GetVal('n7')" id="n7" class="btn btn-dark btn-block">7</span></div>
-                            <div class="col text-center"><span onclick="GetVal('n8')" id="n8" class="btn btn-dark btn-block">8</span></div>
-                            <div class="col text-center"><span onclick="GetVal('n9')" id="n9" class="btn btn-dark btn-block">9</span></div>
-                            <div class="col text-center"><span onclick="GetVal('ncos')" id="ncos" class="btn btn-dark btn-block">COS</span></div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col text-center"><button type="button" onclick="GetVal('n4')" id="n4" class="btn btn-dark btn-block">4</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n5')" id="n5" class="btn btn-dark btn-block">5</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n6')" id="n6" class="btn btn-dark btn-block">6</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('nsin')" id="nsin" class="btn btn-dark btn-block">SIN</button></div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col text-center"><button type="button" onclick="GetVal('n1')" id="n1" class="btn btn-dark btn-block">1</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n2')" id="n2" class="btn btn-dark btn-block">2</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n3')" id="n3" class="btn btn-dark btn-block">3</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('nst')" id="nst" class="btn btn-dark btn-block">x^n</button></div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col text-center"><button type="button" onclick="GetVal('nregistr')" id="nregistr" class="btn btn-dark btn-block">+ / -</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n0')" id="n0" class="btn btn-dark btn-block">0</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n,')" id="n," class="btn btn-dark btn-block">,</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('ncor')" id="ncor" class="btn btn-dark btn-block">√</button></div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col text-center"><button type="button" onclick="GetVal('n/')" id="n/" class="btn btn-dark btn-block">/</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n*')" id="n*" class="btn btn-dark btn-block">*</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n+')" id="n+" class="btn btn-dark btn-block">+</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n-')" id="n-" class="btn btn-dark btn-block">-</button></div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="col text-center"><button onclick="GetResult()" type="button" class="btn btn-dark btn-block">Выполнить операцию</button></div>
-                            </div>
-                        </div>
-                    </div>
+      <div class="item type">deg</div>
+      <div class="item" onclick="f('sin')">sin</div>
+      <div class="item" onclick="f('cos')">cos</div>
+      <div class="item" onclick="f('tan')">tan</div>
+      <div class="item" onclick="f('ctg')">ctg</div>
 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+      <div class="item" onclick="operation('^')">x<span class="upper">y</span></div>
+      <div class="item" onclick="log('lg')">lg</div>
+      <div class="item" onclick="log('ln')">ln</div>
+      <div class="item" onclick="insert('(')">(</div>
+      <div class="item" onclick="insert(')')">)</div>
 
+      <div class="item" onclick="operation('sqr')">x<span class="upper">2</span></div>
+      <div class="item clean" onclick="clean()">C</div>
+      <div class="item back" onclick="back()">&lArr;</div>
+      <div class="item percent" onclick="percent()">%</div>
+      <div class="item divide" onclick="insert('/')">&divide;</div>
 
+      <div class="item" onclick="operation('^-1')">x<span class="upper">-1</span></div>
+      <div class="item" onclick="insert('7')">7</div>
+      <div class="item" onclick="insert('8')">8</div>
+      <div class="item" onclick="insert('9')">9</div>
+      <div class="item mul" onclick="insert('*')">&times;</div>
 
-<!-- Optional JavaScript -->
-<!-- Popper.js first, then Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+      <div class="item" onclick="operation('sqrt')">&radic;x</div>
+      <div class="item" onclick="insert('4')">4</div>
+      <div class="item" onclick="insert('5')">5</div>
+      <div class="item" onclick="insert('6')">6</div>
+      <div class="item sub" onclick="insert('-')">-</div>
+
+      <div class="item" onclick="fact()">x!</div>
+      <div class="item" onclick="insert('1')">1</div>
+      <div class="item" onclick="insert('2')">2</div>
+      <div class="item" onclick="insert('3')">3</div>
+      <div class="item add" onclick="insert('+')">+</div>
+
+      <div class="item" onclick="constant('pi')">&prod;</div>
+      <div class="item" onclick="constant('e')">e</div>
+      <div class="item zero" onclick="insert('0')">0</div>
+      <div class="item" onclick="insert('.')">,</div>
+      <div class="item equal" onclick="equal()">=</div>
+   </div>
+
+   <script src="js/main.js"></script>
 </body>
 </html>
