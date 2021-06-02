@@ -20,12 +20,13 @@ function ClearWindow() {
 
 function DeleteSymbol() {
     let all_string = document.getElementById('calculator').value;
-    document.form.calculator.value = ''
+    //Хватаем строку  --->  обрезаем крайний правый символ
     document.form.calculator.value = all_string.substring(0, all_string.length - 1)
 }
 
 function GetResultMath() {
-    document.form.calculator.value
+    console.log(eval(document.form.calculator.value))
+    // document.form.calculator.innerText = (document.form.calculator.value)
 }
 /*function GetVal(param) {
     let b = document.getElementById('val').innerText
