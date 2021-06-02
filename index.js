@@ -9,6 +9,25 @@ let identifyArrayNoParse = ['nsin','nst','nregistr','n,','ncor','n/','n*','n+','
 ]
 
 function GetVal(param) {
+    //Берём текущий текст из строки "Вводимые данные" и добавляем к нему текст из объекта по событию onclick
+    document.form.calculator.value = document.form.calculator.value + param
+}
+
+function ClearWindow() {
+    //Берём текущий текст из строки "Вводимые данные" и перезаписываем в него пустой текст
+    document.form.calculator.value = ''
+}
+
+function DeleteSymbol() {
+    let all_string = document.getElementById('calculator').value;
+    document.form.calculator.value = ''
+    document.form.calculator.value = all_string.substring(0, all_string.length - 1)
+}
+
+function GetResultMath() {
+    document.form.calculator.value
+}
+/*function GetVal(param) {
     let b = document.getElementById('val').innerText
     console.log(b)
     for (let i = 0; i < identifyArray.length; i++) {
@@ -25,9 +44,9 @@ function GetVal(param) {
             if (param == 'nst') {
                 a = '^';
             }
-            /*if (param == 'nregistr') {
+            /!*if (param == 'nregistr') {
                 a = '';
-            }*/
+            }*!/
             if (param == 'n,') {
                 a = ',';
             }
@@ -49,7 +68,7 @@ function GetVal(param) {
             (document.getElementById('val').innerHTML = b.concat(a))
         }
     }
-}
+}*/
 
 function GetResult() {
     result = document.getElementById('val').innerText
@@ -59,6 +78,7 @@ function GetResult() {
     }
     console.log(parseInt(array[1]))
     // console.log('Результат: ' + res)
+
 }
 
 

@@ -27,49 +27,54 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="row bg-dark">
+                        <div class="row bg-info">
                             <div class="col text-right">
-                                <p class="text-white" style="margin-top: 10px;">Выводимый результат</p>
+                                <form name="form">
+
+                                    <input class="form-control" type="text" name="calculator" id="calculator">
+
+                                </form>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
-                            <div class="col text-center"><span onclick="GetVal('n7')" id="n7" class="btn btn-dark btn-block">7</span></div>
-                            <div class="col text-center"><span onclick="GetVal('n8')" id="n8" class="btn btn-dark btn-block">8</span></div>
-                            <div class="col text-center"><span onclick="GetVal('n9')" id="n9" class="btn btn-dark btn-block">9</span></div>
-                            <div class="col text-center"><span onclick="GetVal('ncos')" id="ncos" class="btn btn-dark btn-block">COS</span></div>
+                            <div class="col text-center"><span onclick="GetVal('7')" id="n7" class="btn btn-dark btn-block">7</span></div>
+                            <div class="col text-center"><span onclick="GetVal('8')" id="n8" class="btn btn-dark btn-block">8</span></div>
+                            <div class="col text-center"><span onclick="GetVal('9')" id="n9" class="btn btn-dark btn-block">9</span></div>
+                            <div class="col text-center"><span onclick="GetVal('cos')" id="ncos" class="btn btn-dark btn-block">COS</span></div>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col text-center"><button type="button" onclick="GetVal('n4')" id="n4" class="btn btn-dark btn-block">4</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n5')" id="n5" class="btn btn-dark btn-block">5</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n6')" id="n6" class="btn btn-dark btn-block">6</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('nsin')" id="nsin" class="btn btn-dark btn-block">SIN</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('4')" id="n4" class="btn btn-dark btn-block">4</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('5')" id="n5" class="btn btn-dark btn-block">5</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('6')" id="n6" class="btn btn-dark btn-block">6</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('sin')" id="nsin" class="btn btn-dark btn-block">SIN</button></div>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col text-center"><button type="button" onclick="GetVal('n1')" id="n1" class="btn btn-dark btn-block">1</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n2')" id="n2" class="btn btn-dark btn-block">2</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n3')" id="n3" class="btn btn-dark btn-block">3</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('nst')" id="nst" class="btn btn-dark btn-block">x^n</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('1')" id="n1" class="btn btn-dark btn-block">1</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('2')" id="n2" class="btn btn-dark btn-block">2</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('3')" id="n3" class="btn btn-dark btn-block">3</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('^')" id="nst" class="btn btn-dark btn-block">x^n</button></div>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col text-center"><button type="button" onclick="GetVal('nregistr')" id="nregistr" class="btn btn-dark btn-block">+ / -</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n0')" id="n0" class="btn btn-dark btn-block">0</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n,')" id="n," class="btn btn-dark btn-block">,</button></div>
+                            <div class="col text-center"><button type="button" onclick="ClearWindow()" id="clear" class="btn btn-dark btn-block">C</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('0')" id="n0" class="btn btn-dark btn-block">0</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('.')" id="n," class="btn btn-dark btn-block">,</button></div>
                             <div class="col text-center"><button type="button" onclick="GetVal('ncor')" id="ncor" class="btn btn-dark btn-block">√</button></div>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col text-center"><button type="button" onclick="GetVal('n/')" id="n/" class="btn btn-dark btn-block">/</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n*')" id="n*" class="btn btn-dark btn-block">*</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n+')" id="n+" class="btn btn-dark btn-block">+</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('n-')" id="n-" class="btn btn-dark btn-block">-</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('/')" id="n/" class="btn btn-dark btn-block">/</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('*')" id="n*" class="btn btn-dark btn-block">*</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('+')" id="n+" class="btn btn-dark btn-block">+</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetVal('-')" id="n-" class="btn btn-dark btn-block">-</button></div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-12">
+                                <div class="col text-center"><button onclick="DeleteSymbol()" type="button" class="btn btn-dark btn-block"><</button></div>
                                 <div class="col text-center"><button onclick="GetResult()" type="button" class="btn btn-dark btn-block">Выполнить операцию</button></div>
                             </div>
                         </div>
