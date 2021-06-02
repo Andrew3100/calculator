@@ -21,19 +21,27 @@
                 <div class="card-body bg-info">
 
                     <div class="container-fluid">
-                        <div class="row ">
-                            <div class="col">
-                                <h4 id="val" style="color: green"></h4>
+                        <div class="row">
+                            <div class="col-8">
+                                <form name="form">
+
+                                    <input class="form-control" accesskey="s" name="calculator" id="calculator">
+
+                                </form>
                             </div>
+                            <div class="col-2 text-center">
+                                <button onclick="DeleteSymbol()" type="button" class="btn btn-dark btn-block"><</button>
+                            </div>
+                            <div class="col-2">
+                                <button onclick="ClearWindow()" type="button" class="btn btn-dark btn-block">С</button>
+                            </div>
+
                         </div>
                         <hr>
                         <div class="row bg-info">
                             <div class="col text-right">
-                                <form name="form">
-
-                                    <input class="form-control" type="text" name="calculator" id="calculator">
-
-                                </form>
+                                <!--Непечатаемый символ-->
+                                <h4 id="res" style="color: green;">&nbsp;</h4>
                             </div>
                         </div>
                         <hr>
@@ -62,7 +70,7 @@
                             <div class="col text-center"><button type="button" onclick="ClearWindow()" id="clear" class="btn btn-dark btn-block">C</button></div>
                             <div class="col text-center"><button type="button" onclick="GetVal('0')" id="n0" class="btn btn-dark btn-block">0</button></div>
                             <div class="col text-center"><button type="button" onclick="GetVal('.')" id="n," class="btn btn-dark btn-block">,</button></div>
-                            <div class="col text-center"><button type="button" onclick="GetVal('ncor')" id="ncor" class="btn btn-dark btn-block">√</button></div>
+                            <div class="col text-center"><button type="button" onclick="GetResultMath()" id="ncor" class="btn btn-dark btn-block">√</button></div>
                         </div>
                         <br>
                         <div class="row">
@@ -74,7 +82,6 @@
                         <br>
                         <div class="row">
                             <div class="col-12">
-                                <div class="col text-center"><button onclick="DeleteSymbol()" type="button" class="btn btn-dark btn-block"><</button></div>
                                 <div class="col text-center"><button onclick="GetResultMath()" type="button" class="btn btn-dark btn-block">Выполнить операцию</button></div>
                             </div>
                         </div>
